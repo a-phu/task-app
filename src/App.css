@@ -1,0 +1,27 @@
+.App {
+    margin: auto;
+    width: 50%;
+    border: 2px solid black;
+    padding: 10px;
+    font-family: 'Alata', sans-serif;
+    /* display:flex; */
+}
+
+button{
+    /* display: flex; */
+    background-color: #FAFAFF;
+    border-radius: 5px;
+    font-family: 'Alata', sans-serif;
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+
+.icon-button:hover{
+    transform: scale(1.05);
+}
+
+input{
+    border-radius: 5px;
+}
