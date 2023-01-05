@@ -5,6 +5,6 @@ Users can:
 * can check and uncheck items
 
 
-Live version is [here] (https://a-phu.github.io/task-app/).
+Live version is [here](https://a-phu.github.io/task-app/).
 
 <img width="1440" alt="Screen Shot 2023-01-05 at 7 11 39 pm" src="https://user-images.githubusercontent.com/46221612/210735496-3b415fb6-ec8d-4c29-ae06-f7abc17c0d48.png">
