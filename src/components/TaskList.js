@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
-// import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 import { faSquare, faSquareCheck } from "@fortawesome/free-regular-svg-icons";
 
 const TaskButtons = (props) => {
@@ -47,9 +46,96 @@ const TaskButtons = (props) => {
   }
 };
 
+const EditTask = (props) => {
+  const [edited, setEdited] = useState(false);
+  const [editedTask, setEditedTask] = useState("eat soup");
+
+  //inactive - not checked
+  if (!edited) {
+    // console.log("inactive - before click", isActive);
+    return (
+      <div className="task">
+        <TaskButtons taskText={props.taskText} />
+        <div className="task-buttons">
+          <FontAwesomeIcon
+            className="icon-button"
+            icon={faPenToSquare}
+            onClick={() => {
+              // console.log("active - before click ", isActive);
+              //this is true becomes false
+              setEdited(!edited);
+            }}
+          />
+          <FontAwesomeIcon
+            className="icon-button"
+            icon={faTrash}
+            onClick={() => {
+              props.setTaskList(
+                //create an array with tasks that have ids (a.id) diff
+                //to task.id (so would leave out the current task id)
+                //each delete button filters out that task from array
+                //and requests a re-render w/ the resulting array
+                //(does not modify the org array)
+                props.taskList.filter((a) => props.taskId !== a.id)
+              );
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+  //active - checked
+  else {
+    // console.log("inactive - after click: ", isActive);
+    return (
+      <div className="task">
+        <input
+          className="edit-task-input"
+          onInput={(e) => setEditedTask(e.target.value)}
+        />
+        <div className="task-buttons">
+          <FontAwesomeIcon
+            className="icon-button"
+            icon={faPenToSquare}
+            onClick={() => {
+              // console.log("active - before click ", isActive);
+              //this is true becomes false
+              props.setTaskList(
+                props.taskList.map((a) => {
+                  if (props.taskId === a.id) {
+                    return { ...a, text: editedTask };
+                  } else {
+                    return a;
+                  }
+                })
+              );
+              setEdited(!edited);
+            }}
+          />
+          <FontAwesomeIcon
+            className="icon-button"
+            icon={faTrash}
+            onClick={() => {
+              props.setTaskList(
+                //create an array with tasks that have ids (a.id) diff
+                //to task.id (so would leave out the current task id)
+                //each delete button filters out that task from array
+                //and requests a re-render w/ the resulting array
+                //(does not modify the org array)
+                props.taskList.filter((a) => props.taskId !== a.id)
+              );
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+};
 const TaskList = (props) => {
   // const deleteIcon = <FontAwesomeIcon icon="fa-solid fa-trash" />;
   // const {taskList} = props;
+
+  //   const [editedTask, setEditedTask] = useState("");
 
   return (
     <ul>
@@ -60,27 +146,12 @@ const TaskList = (props) => {
         // console.log("task id: ", task.id)
         return (
           <li key={task.id}>
-            <div className="task">
-              <div className="text">
-                <TaskButtons taskText={task.text} />
-              </div>
-              <div className="task-buttons">
-                <FontAwesomeIcon
-                  className="icon-button"
-                  icon={faPenToSquare}
-                  onClick={() => {}}
-                />
-                <FontAwesomeIcon
-                  className="icon-button"
-                  icon={faTrash}
-                  onClick={() => {
-                    props.setTaskList(
-                      props.taskList.filter((a) => task.id !== a.id)
-                    );
-                  }}
-                />
-              </div>
-            </div>
+            <EditTask
+              taskText={task.text}
+              taskId={task.id}
+              taskList={props.taskList}
+              setTaskList={props.setTaskList}
+            />
           </li>
         );
       })}

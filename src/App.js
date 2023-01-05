@@ -32,25 +32,31 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="top">
-        <div className="top-text">
-          <h1>today's to-do</h1>
+      <div className="components">
+        <div className="top">
+          <div className="top-text">
+            <h1>today's to-do</h1>
+          </div>
+          <form onSubmit={onFormSubmit} className="input-section">
+            <input
+              value={task}
+              type="text"
+              placeholder="enter task"
+              onInput={(e) => setTask(e.target.value)}
+            />
+            {console.log("task entered: ", task)}
+            <button type="submit" onClick={submitTask}>
+              submit
+            </button>
+          </form>
         </div>
-        <form onSubmit={onFormSubmit} className="input-section">
-          <input
-            value={task}
-            type="text"
-            placeholder="enter task"
-            onInput={(e) => setTask(e.target.value)}
-          />
-          {console.log("task entered: ", task)}
-          <button type="submit" onClick={submitTask}>
-            submit
-          </button>
-        </form>
+        <TaskList
+          taskList={taskList}
+          setTaskList={setTaskList}
+          setTask={setTask}
+        />
+        <Footer />
       </div>
-      <TaskList taskList={taskList} setTaskList={setTaskList} />
-      <Footer />
     </div>
   );
 };
