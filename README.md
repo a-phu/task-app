@@ -1,5 +1,7 @@
 # To-do list
-Simple to-do list app using React. To-do list items can be added using the input section and shown underneath as a list.
+Simple to-do list app using React. 
+To-do list items can be added using the input section and shown underneath as a list.
+
 Users can:
 * can edit and delete task item 
 * can check and uncheck items
