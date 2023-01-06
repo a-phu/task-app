@@ -12,7 +12,7 @@ Live version is [here](https://a-phu.github.io/task-app/).
 ## Getting started
 ```
 git clone https://github.com/a-phu/task-app.git
-cd cv-application
+cd task-app
 npm install
 npm start
 ```

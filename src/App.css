@@ -1,6 +1,6 @@
 .App {
   margin: auto;
-  width: 50%;
+  width: 500px;
   /* border: 2px solid black; */
   padding: 10px;
   font-family: "Alata", sans-serif;
@@ -99,7 +99,7 @@ ul {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-
+  gap: 20px;
   /* width: 85%; */
   /* border: 2px solid #97ff9e; */
 }

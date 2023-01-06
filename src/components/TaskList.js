@@ -48,7 +48,7 @@ const TaskButtons = (props) => {
 
 const EditTask = (props) => {
   const [edited, setEdited] = useState(false);
-  const [editedTask, setEditedTask] = useState("eat soup");
+  const [editedTask, setEditedTask] = useState(props.taskText);
 
   //inactive - not checked
   if (!edited) {
@@ -91,7 +91,7 @@ const EditTask = (props) => {
       <div className="task">
         <input
           className="edit-task-input"
-          onInput={(e) => setEditedTask(e.target.value)}
+          onChange={(e) => setEditedTask(e.target.value)}
         />
         <div className="task-buttons">
           <FontAwesomeIcon
