@@ -13,7 +13,13 @@ const DeleteTask = (props) => {
     );
   };
 
-  return <FontAwesomeIcon icon={faTrash} onClick={handleDeleteTask} />;
+  return (
+    <FontAwesomeIcon
+      className={props.iconButtonClassName}
+      icon={faTrash}
+      onClick={handleDeleteTask}
+    />
+  );
 };
 
 export default DeleteTask;

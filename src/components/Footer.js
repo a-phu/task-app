@@ -1,8 +1,10 @@
+/*footer for app*/
+
 import githubLogo from "./github-mark.png";
 
-const Footer = () => {
+const Footer = (props) => {
   return (
-    <div className="footer">
+    <div className={props.className}>
       created by annabel phu
       <a href="https://github.com/a-phu">
         <img src={githubLogo} alt="github-logo" />

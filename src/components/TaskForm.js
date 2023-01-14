@@ -1,9 +1,11 @@
+/*component that holds form to add new task*/
+
 import { v4 as uuid } from "uuid";
 
 const TaskForm = (props) => {
   const addTask = (e) => {
     e.preventDefault();
-    //add a new task by returning new array with new task appended
+    /*add a new task by returning new array with new task appended*/
     props.setTaskList((oldTaskList) => [
       ...oldTaskList,
       { id: uuid(), text: props.newTask },
@@ -16,7 +18,7 @@ const TaskForm = (props) => {
   };
 
   return (
-    <div>
+    <div className={props.className}>
       <form onSubmit={addTask}>
         <input
           value={props.newTask}
@@ -24,8 +26,8 @@ const TaskForm = (props) => {
           placeholder="enter task"
           onChange={handleTaskChange}
         />
-        <button type="submit">submit</button>
       </form>
+      <button type="submit">submit</button>
     </div>
   );
 };

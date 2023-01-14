@@ -1,3 +1,5 @@
+/*component that allows task to be marked as done with a checkmark*/
+
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquare, faSquareCheck } from "@fortawesome/free-regular-svg-icons";
@@ -7,9 +9,10 @@ const UncheckTask = (props) => {
 
   if (uncheck) {
     return (
-      <div>
+      <div className={props.checkTaskClassName}>
         <FontAwesomeIcon
           icon={faSquare}
+          className={props.iconButtonClassName}
           onClick={() => {
             setUncheck(!uncheck);
           }}
@@ -19,9 +22,10 @@ const UncheckTask = (props) => {
     );
   } else {
     return (
-      <div>
+      <div className={props.checkTaskClassName}>
         <FontAwesomeIcon
           icon={faSquareCheck}
+          className={props.iconButtonClassName}
           onClick={() => {
             setUncheck(!uncheck);
           }}

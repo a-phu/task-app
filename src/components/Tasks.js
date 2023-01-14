@@ -1,9 +1,10 @@
-/*show all tasks as a list */
+/*shows all tasks as a list*/
+
 import Task from "./Task";
 
 const Tasks = (props) => {
   return (
-    <ul>
+    <ul className={props.className}>
       {props.taskList.map((task) => {
         return (
           <Task

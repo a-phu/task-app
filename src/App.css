@@ -1,60 +1,86 @@
 .App {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Components {
   margin: auto;
   width: 500px;
-  /* border: 2px solid black; */
+  height: 500px;
   padding: 10px;
-  font-family: "Alata", sans-serif;
-  border-radius: 20px;
-  /* background-color: #c2e6fd; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.components {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.top {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  /* gap: 10px;*/
-  /* border: 2px solid rgb(73, 51, 181); */
-  width: auto;
-}
-
-/* .top-text{
-    display:flex;
-    justify-content: left;
-    border: 2px solid pink;
-} */
-
-input {
-  border-radius: 10px;
-  font-size: 15px;
   font-family: "Dosis", sans-serif;
-  /* outline: 2px solid #9dbcef; */
-  border: 2px solid #000000;
-  width: 400px;
-  height: 25px;
-  padding-left: 10px;
+  overflow-y: hidden;
 }
 
-.input-section {
+.MainInput {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.Tasks {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  list-style-type: none;
+  padding: 0;
+  max-height: 300px;
   gap: 5px;
 }
 
-.edit-task-input {
-  background-color: #e7f5ff;
-  border: 2px solid #e7f5ff;
+.Task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 20px;
+  align-items: center;
+  padding-left: 1px;
+}
+
+.Task:hover {
+  border: 2px solid #9dbcef;
+  padding: 2px;
+  border-radius: 10px;
+}
+
+.CheckTask {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: center;
+}
+
+.EditTaskButtonGroup {
+  /* border: 2px lightsteelblue solid; */
+  width: 50px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.IconButton:hover {
+  transform: scale(1.1);
+  color: #9dbcef;
+}
+
+.Footer {
+  display: flex;
+  margin-top: 20px;
+  font-size: 12px;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  padding-left: 10px;
   height: 25px;
+  width: 410px;
 }
 
 input:focus {
@@ -63,116 +89,28 @@ input:focus {
 }
 
 button {
-  /* display: flex; */
+  font-family: "Alata", sans-serif;
+  font-size: 15px;
+  border-radius: 10px;
+  height: 30px;
+  width: 70px;
   background-color: #fafaff;
   border: 2px solid #000000;
-  border-radius: 10px;
-  font-family: "Alata", sans-serif;
-  height: 30px;
 }
 
 button:hover {
-  /* transform: scale(1.05); */
-  /* outline: 1px solid #9dbcef;
-    border:  1px solid #9dbcef;  */
   background-color: #9dbcef;
 }
 
-/* .Overview{
-    text-align: center;
-} */
-
-ul {
-  /* display:inline-block; */
-  font-family: "Dosis", sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-radius: 10px;
-  padding: 0;
-  margin-top: 10px;
-  list-style-type: none;
-  /* border: 2px solid blue; */
+h1 {
+  font-family: "Alata", sans-serif;
+  /* border: 2px pink solid; */
 }
 
-.task {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  gap: 20px;
-  /* width: 85%; */
-  /* border: 2px solid #97ff9e; */
-}
-
-/* .text{
-    display:flex;
-    flex-direction: row;
-    gap: 10px;
-    /* width: 75px;
-    overflow-wrap: break-word; 
-} */
-
-.task-text {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  /* width: 250px; */
-  overflow-wrap: break-word;
-  /* border: 2px solid #9e4ee9; */
-}
-
-.task-text-checked {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  /* width: 250px; */
-  overflow-wrap: break-word;
-  text-decoration: line-through;
-}
-
-.task-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  gap: 5px;
-  /* border: 2px solid #e9654e; */
-}
-
-li {
-  /* border: 2px blue solid; */
-  font-size: 20px;
-  /* padding: 5px; */
-  /* border: 2px solid #ff97f3; */
-  /* width: 500px; */
-}
-
-li:hover {
-  /* background-color: #d3ff90; */
-  border: 2px solid #9dbcef;
-  padding: 2px;
-  border-radius: 10px;
-}
-
-.icon-button:hover {
-  transform: scale(1.1);
-  color: #9dbcef;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  font-family: "Dosis", sans-serif;
-  position: absolute;
-  left: 0;
-  bottom: 10px;
-  right: 0;
-  gap: 5px;
-}
-
-.footer img {
+img {
   max-width: 20px;
 }
 
-.footer img:hover {
-  transform: scale(1.2);
+img:hover {
+  transform: scale(1.1);
 }
