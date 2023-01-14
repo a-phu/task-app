@@ -22,3 +22,4 @@ npm start
 ## Built with
 * [React](https://reactjs.org/)
 * [uuid](https://www.npmjs.com/package/uuid)
+* [overlayscrollbars](https://www.npmjs.com/package/overlayscrollbars-react)
