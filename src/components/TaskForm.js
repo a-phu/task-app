@@ -27,7 +27,9 @@ const TaskForm = (props) => {
           onChange={handleTaskChange}
         />
       </form>
-      <button type="submit">submit</button>
+      <button type="submit" onClick={addTask}>
+        submit
+      </button>
     </div>
   );
 };
