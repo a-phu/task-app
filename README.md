@@ -9,7 +9,7 @@ Users can:
 
 Live version is [here](https://a-phu.github.io/task-app/).
 
-<img width="1440" alt="Screen Shot 2023-01-07 at 10 04 21 am" src="https://user-images.githubusercontent.com/46221612/211114371-9a3c8960-631b-4d18-8ae7-81ec0b7110c1.png">
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/46221612/212450840-36fcd58e-17ec-41fb-99bc-854efb2803a5.png">
 
 ## Getting started
 ```
@@ -22,3 +22,4 @@ npm start
 ## Built with
 * [React](https://reactjs.org/)
 * [uuid](https://www.npmjs.com/package/uuid)
+* [overlayscrollbars](https://www.npmjs.com/package/overlayscrollbars-react)
