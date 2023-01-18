@@ -11,18 +11,12 @@ import { useState } from "react";
 
 const EditTask = (props) => {
   const [inactiveEdit, setInactiveEdit] = useState(true);
-  /*keep a state of task in this component or else it doesn't change bc you're getting the
-  value from another component which returns the final state it's in before it is passed
-  via props*/
   const [editedTask, setEditedTask] = useState(props.taskText);
 
   const handleEditTask = (e) => {
     if (editedTask !== "") {
       props.setTaskList(
         props.taskList.map((currentTask) => {
-          /*taskId is the Id of the task we want to edit. 
-            when it matches the id in the array, it will return a task (the object)
-            with the same id, but change the text to whatever the input is */
           if (props.taskId === currentTask.id) {
             return { ...currentTask, text: editedTask };
           } else {

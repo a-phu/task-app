@@ -6,8 +6,6 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const DeleteTask = (props) => {
   const handleDeleteTask = () => {
-    /*rerenders w/ array that have tasks w/ ids (notDeleted.id) different
-    to the deleted id (props.taskId)*/
     props.setTaskList(
       props.taskList.filter((notDeleted) => props.taskId !== notDeleted.id)
     );

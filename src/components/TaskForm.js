@@ -5,7 +5,6 @@ import { v4 as uuid } from "uuid";
 const TaskForm = (props) => {
   const addTask = (e) => {
     e.preventDefault();
-    /*add a new task by returning new array with new task appended*/
     props.setTaskList((oldTaskList) => [
       ...oldTaskList,
       { id: uuid(), text: props.newTask },
